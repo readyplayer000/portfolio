@@ -15,13 +15,15 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
+const base = import.meta.env.BASE_URL;
+
 const hi = {
-  logo: "/images/logo.png",
-  hero: "/images/hero.jpg",
-  triotax: "/images/triotax-signal.jpg",
-  proxy: "/images/proxy-signal.jpg",
-  visualVoice: "/images/visual-voice-signal.jpg",
-  clinical: "/images/clinical-signal.jpg"
+  logo: `${base}images/logo.png`,
+  hero: `${base}images/hero.jpg`,
+  triotax: `${base}images/triotax-signal.jpg`,
+  proxy: `${base}images/proxy-signal.jpg`,
+  visualVoice: `${base}images/visual-voice-signal.jpg`,
+  clinical: `${base}images/clinical-signal.jpg`
 };
 
 const Tl = [
