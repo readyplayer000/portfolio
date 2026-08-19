@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Router, Switch, Route } from "wouter";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -7,12 +7,15 @@ import { Toaster } from "./components/ui/sonner";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 function RootRouter() {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <Router base={base}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
   );
 }
 
